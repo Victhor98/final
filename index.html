@@ -74,10 +74,24 @@
             transform: none
         }
         
-        /* Estilos para los enlaces del menú activos */
+        /* Estilos para los enlaces del menú activos - COLOR MÁS NOTORIO */
         #nav li.current a,
-        #nav a.router-link-active {
-            color: var(--primary-color);
+        #nav a.router-link-active,
+        /* Aplicar color más notorio específicamente a Inicio y Contacto */
+        #nav a[href="/"],
+        #nav a[href="/contact"],
+        #nav a[routerlink="/"],
+        #nav a[routerlink="/contact"] {
+            color: #d52349 !important; /* Rojo intenso más notorio */
+            font-weight: 700;
+        }
+        
+        /* Estilos específicos para Inicio y Contacto cuando están activos */
+        #nav li.current a[href="/"],
+        #nav li.current a[href="/contact"],
+        #nav li.current a[routerlink="/"],
+        #nav li.current a[routerlink="/contact"] {
+            color: #d52349 !important;
             background: #d523491a;
             border-radius: 4px;
         }
@@ -95,7 +109,7 @@
         
         /* Efecto hover para todos los enlaces del menú */
         #nav a:not(.button):hover {
-            color: var(--primary-color);
+            color: #d52349 !important; /* Rojo intenso en hover */
             background: rgba(213, 35, 73, 0.1);
             border-radius: 4px;
         }
@@ -119,22 +133,7 @@
                         <li _ngcontent-ng-c4030530607 class="current">
                             <a _ngcontent-ng-c4030530607 routerlink="/" href="/" jsaction="click:;">Inicio</a>
                         </li>
-                        <li _ngcontent-ng-c4030530607 class>
-                            <a _ngcontent-ng-c4030530607 href="#" jsaction="click:;">Gestión</a>
-                            <ul _ngcontent-ng-c4030530607>
-                                <!-- Ambos enlaces apuntan a la misma ruta -->
-                                <li _ngcontent-ng-c4030530607>
-                                    <a _ngcontent-ng-c4030530607 routerlink="/celulares" href="/celulares" jsaction="click:;">
-                                        Celulares
-                                    </a>
-                                </li>
-                                <li _ngcontent-ng-c4030530607>
-                                    <a _ngcontent-ng-c4030530607 routerlink="/cargadores" href="/cargadores" jsaction="click:;">
-                                        Cargadores
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
+                        <!-- ELIMINADO EL APARTADO "GESTIÓN" COMPLETO -->
                         <li _ngcontent-ng-c4030530607 class>
                             <a _ngcontent-ng-c4030530607 routerlink="/contact" href="/contact" jsaction="click:;">Contacto</a>
                         </li>
